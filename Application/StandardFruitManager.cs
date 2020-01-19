@@ -39,7 +39,7 @@ namespace FruitManager.Application
             if (response is null)
                 return null;
 
-            return new FruitModel { Name = response.Name, Description = response.Description, Price = response.Price, Quantity = response.Quantity };
+            return mapper.Map<FruitModel>(response);
         }
     }
 }
