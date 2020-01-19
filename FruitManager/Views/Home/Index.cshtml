@@ -1,9 +1,13 @@
-﻿@model FruitViewModel
+﻿@model IEnumerable<FruitViewModel>
 @{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>@Model.Name</p>
+    @foreach (var item in Model)
+    {
+        <p>@item.Name - @item.Description</p>
+        <br>
+    }
 </div>

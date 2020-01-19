@@ -1,6 +1,6 @@
 ﻿namespace FruitManager.Application.Abstraction.Model
 {
-    public class Fruit
+    public class FruitModel
     {
         public string Name { get; set; }
         public string Description { get; set; }

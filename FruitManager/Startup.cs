@@ -16,6 +16,9 @@ using FruitManager.Application.Abstraction;
 using FruitManager.Application;
 using FruitManager.DataAccessLayer.Abstraction;
 using FruitManager.DataAccessLayer;
+using AutoMapper;
+using FruitManager.Application.Mapping;
+using FruitManager.Mapping;
 
 namespace FruitManager
 {
@@ -39,7 +42,7 @@ namespace FruitManager
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-
+            services.AddAutoMapper(typeof(ApplicationProfile), typeof(SiteProfile));
             services.AddSingleton<IFruitManager, StandardFruitManager>();
             services.AddSingleton<IFruitDataBuilder, FakeDataBuilder>();
         }

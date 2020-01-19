@@ -1,9 +1,11 @@
 ﻿using FruitManager.Application.Abstraction.Model;
+using System.Collections.Generic;
 
 namespace FruitManager.Application.Abstraction
 {
     public interface IFruitManager
     {
-        Fruit GetFruitByName(string name);
+        IEnumerable<FruitModel> GetFruits();
+        FruitModel GetFruitByName(string name);
     }
 }

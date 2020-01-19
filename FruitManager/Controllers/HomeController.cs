@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FruitManager.Models;
 using FruitManager.Application.Abstraction;
+using AutoMapper;
+using FruitManager.Application.Abstraction.Model;
 
 namespace FruitManager.Controllers
 {
@@ -14,17 +16,19 @@ namespace FruitManager.Controllers
     {
         private readonly ILogger<HomeController> logger;
         private readonly IFruitManager fruitManager;
+        private readonly IMapper mapper;
 
-        public HomeController(ILogger<HomeController> logger, IFruitManager fruitManager)
+        public HomeController(ILogger<HomeController> logger, IFruitManager fruitManager, IMapper mapper)
         {
             this.logger = logger;
             this.fruitManager = fruitManager;
+            this.mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            var fruit = fruitManager.GetFruitByName("apple");
-            return View(new FruitViewModel { Name = fruit.Name, Description = fruit.Description });
+            var fruits = fruitManager.GetFruits();
+            return View(mapper.Map<IEnumerable<FruitModel>,IEnumerable<FruitViewModel>>(fruits));
         }
 
         public IActionResult Privacy()
