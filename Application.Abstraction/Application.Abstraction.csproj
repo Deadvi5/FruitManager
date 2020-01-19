@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>FruitManager.Application.Abstraction</AssemblyName>
+    <RootNamespace>FruitManager.Application.Abstraction</RootNamespace>
+  </PropertyGroup>
+
+</Project>

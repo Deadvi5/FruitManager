@@ -12,6 +12,10 @@ using FruitManager.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using FruitManager.Application.Abstraction;
+using FruitManager.Application;
+using FruitManager.DataAccessLayer.Abstraction;
+using FruitManager.DataAccessLayer;
 
 namespace FruitManager
 {
@@ -34,6 +38,10 @@ namespace FruitManager
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+
+            services.AddSingleton<IFruitManager, StandardFruitManager>();
+            services.AddSingleton<IFruitDataBuilder, FakeDataBuilder>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using FruitManager.Models;
+using FruitManager.Application.Abstraction;
 
 namespace FruitManager.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly IFruitManager fruitManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IFruitManager fruitManager)
         {
-            _logger = logger;
+            this.logger = logger;
+            this.fruitManager = fruitManager;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var fruit = fruitManager.GetFruitByName("Apple");
+            return View(new FruitViewModel { Name = fruit.Name, Description = fruit.Description });
         }
 
         public IActionResult Privacy()
