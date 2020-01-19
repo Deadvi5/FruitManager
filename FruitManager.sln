@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FruitManager", "FruitManager\FruitManager.csproj", "{AF32614C-6BAF-4B23-9DFF-FD329EE1EC07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF32614C-6BAF-4B23-9DFF-FD329EE1EC07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF32614C-6BAF-4B23-9DFF-FD329EE1EC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF32614C-6BAF-4B23-9DFF-FD329EE1EC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF32614C-6BAF-4B23-9DFF-FD329EE1EC07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {990EBF5D-AB7F-46E1-9404-BC33B8BFCE77}
+	EndGlobalSection
+EndGlobal
