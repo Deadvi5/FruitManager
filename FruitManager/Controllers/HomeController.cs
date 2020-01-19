@@ -23,7 +23,7 @@ namespace FruitManager.Controllers
 
         public IActionResult Index()
         {
-            var fruit = fruitManager.GetFruitByName("Apple");
+            var fruit = fruitManager.GetFruitByName("apple");
             return View(new FruitViewModel { Name = fruit.Name, Description = fruit.Description });
         }
 
