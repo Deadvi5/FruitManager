@@ -7,7 +7,6 @@
     <h1 class="display-4">Welcome</h1>
     @foreach (var item in Model)
     {
-        <p>@item.Name - @item.Description</p>
-        <br>
+        <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Name">@item.Name - @item.Description</a><br />
     }
 </div>

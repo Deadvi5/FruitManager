@@ -27,13 +27,15 @@ namespace FruitManager.Controllers
 
         public IActionResult Index()
         {
-            var fruits = fruitManager.GetFruits();
-            return View(mapper.Map<IEnumerable<FruitModel>,IEnumerable<FruitViewModel>>(fruits));
+            var viewModel = mapper.Map<IEnumerable<FruitModel>, IEnumerable<FruitViewModel>>(fruitManager.GetFruits());
+            return View(viewModel);
         }
-
-        public IActionResult Privacy()
+        public IActionResult Detail(string id)
         {
-            return View();
+            if (string.IsNullOrWhiteSpace(id)) throw new ArgumentNullException(nameof(id));
+
+            var viewModel = mapper.Map<FruitModel, FruitViewModel>(fruitManager.GetFruitByName(id));
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
